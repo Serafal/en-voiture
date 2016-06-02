@@ -171,22 +171,6 @@ namespace EnVoiture
                             sortieN = _routesVille[n - largeurVille]._orientationsRoutes[Orientation.SUD];
                         }
 
-                        //if (sortieE)
-                        //{
-                        //    icpt++;
-                        //}
-                        //if (sortieN)
-                        //{
-                        //    icpt++;
-                        //}
-                        //if (sortieS)
-                        //{
-                        //    icpt++;
-                        //}
-                        //if (sortieW)
-                        //{
-                        //    icpt++;
-                        //}
                         if (sortieE != Obstacle.RIEN)
                         {
                             icpt++;
