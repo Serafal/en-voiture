@@ -222,7 +222,7 @@ namespace EnVoiture
         /// </summary>
         public void Avancer()
         {
-            Localisation = new PointF((float)(Localisation.X + dblVitesse * Math.Sin(Angle)), (float)(Localisation.Y - dblVitesse * Math.Cos(Angle)));
+            Position = new PointF((float)(Position.X + dblVitesse * Math.Sin(Angle)), (float)(Position.Y - dblVitesse * Math.Cos(Angle)));
         }
         public void TournerGauche()
         {
@@ -238,7 +238,7 @@ namespace EnVoiture
         public void Reculer()
         {
             dblVitesse -= ACCELERATION;
-            Localisation = new PointF((float)(Localisation.X + dblVitesse * Math.Sin(Angle)), (float)(Localisation.Y - dblVitesse * Math.Cos(Angle)));
+            Position = new PointF((float)(Position.X + dblVitesse * Math.Sin(Angle)), (float)(Position.Y - dblVitesse * Math.Cos(Angle)));
         }
         /// <summary>
         /// si on ne presse plus rien et que la voiture avance, on ralenti 

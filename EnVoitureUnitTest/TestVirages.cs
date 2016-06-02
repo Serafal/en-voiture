@@ -29,7 +29,7 @@ namespace EnVoitureUnitTest
             voiture.Accelerer();
             voiture.TournerGauche();
             
-            Assert.AreEqual(voiture.Angle, -0.001, 0.000001);
+            Assert.AreEqual(voiture.Angle, -0.001, 1e-6);
             Assert.AreEqual(voiture.Vitesse, 0.10F);
         }
 
@@ -41,7 +41,7 @@ namespace EnVoitureUnitTest
             voiture.Accelerer();
             voiture.TournerGauche();
 
-            Assert.AreEqual(voiture.Angle, -0.051, 0.000001);
+            Assert.AreEqual(voiture.Angle, -0.051, 1e-6);
             Assert.AreEqual(voiture.Vitesse, 5.1F);
         }
 
@@ -53,14 +53,20 @@ namespace EnVoitureUnitTest
             voiture.Accelerer();
             voiture.TournerGauche();
 
-            Assert.AreEqual(voiture.Angle, 0.049, 0.000001);
+            Assert.AreEqual(voiture.Angle, 0.049, 1e-6);
             Assert.AreEqual(voiture.Vitesse, -4.9F);
         }
 
-        [TestMethod]
+        [TestMethod]//Deuxième test vitesse et angle de voiture en mouvement qui accelere à gauche
         public void TestAccelerationGaucheDepartVitessesDifferentes()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = 15.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
 
+            Assert.AreEqual(voiture.Angle, -0.151, 1e-6);
+            Assert.AreEqual(voiture.Vitesse, 15.1F);
         }
 
         /*
@@ -78,9 +84,10 @@ namespace EnVoitureUnitTest
             voiture.Freiner();
 
             Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
-        [TestMethod]
+        [TestMethod]//Test vitesse et angle de la voiture en mouvement qui freine à gauche
         public void TestFreinageGaucheDepartMouvement()
         {
             Usager voiture = new Voiture(0, 0, 10, 20, 80);
@@ -90,18 +97,33 @@ namespace EnVoitureUnitTest
             voiture.Freiner();
 
             Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
-        [TestMethod]
+        [TestMethod]//Test vitesse et angle de la voiture en mouvement negatif qui freine à gauche
         public void TestFreinageGaucheDepartVitesseNegative()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = -5.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Freiner();
 
+            Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
-        [TestMethod]
+        [TestMethod]//Deuxième test vitesse et angle de la voiture en mouvement qui freine à gauche
         public void TestFreinageGaucheDepartVitessesDifferentes()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = 15.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Freiner();
 
+            Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
         /*
@@ -113,25 +135,52 @@ namespace EnVoitureUnitTest
         [TestMethod]//Test vitesse et angle de la voiture arretee qui decelere à gauche
         public void TestFrottementGaucheDepartArrete()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Ralentir();
 
+            Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
-        [TestMethod]
+        [TestMethod]//Test vitesse et angle de la voiture en mouvement qui decelere à gauche
         public void TestFrottementGaucheDepartMouvement()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = 5.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Ralentir();
 
+            Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
-        [TestMethod]
+        [TestMethod]//Test vitesse et angle de la voiture en mouvement negatif qui decelere à gauche
         public void TestFrottementGaucheDepartVitesseNegative()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = -5.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Ralentir();
 
+            Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 
-        [TestMethod]
+        [TestMethod]//Deuxième test vitesse et angle de la voiture en mouvement qui decelere à gauche
         public void TestFrottementGaucheDepartVitessesDifferentes()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = 15.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Ralentir();
 
+            Assert.AreEqual(voiture.Angle, 10);
+            Assert.AreEqual(voiture.Vitesse, 0);
         }
 //===========================================================================
 // Tests Droite
