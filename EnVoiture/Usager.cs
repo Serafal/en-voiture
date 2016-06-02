@@ -11,9 +11,9 @@ namespace EnVoiture
         private RectangleF bornes;
         private float dblVitesse;
         private float dblVitesseMax;
-        private const float ACCELERATION = 0.10F;
-        private const float DECCELERATION = 0.02F;
-        private const float FREINAGE = 0.15F;
+        private const float ACCELERATION = 10.0F;
+        private const float DECCELERATION = 2.0F;
+        private const float FREINAGE = 15.0F;
 
         /// <summary>
         /// propriété règlant la vitesse
