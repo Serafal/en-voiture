@@ -72,13 +72,24 @@ namespace EnVoitureUnitTest
         [TestMethod]//Test vitesse et angle de la voiture arretee qui freine à gauche
         public void TestFreinageGaucheDepartArrete()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Freiner();
 
+            Assert.AreEqual(voiture.Angle, 10);
         }
 
         [TestMethod]
         public void TestFreinageGaucheDepartMouvement()
         {
+            Usager voiture = new Voiture(0, 0, 10, 20, 80);
+            voiture.Vitesse = 5.0F;
+            voiture.Accelerer();
+            voiture.TournerGauche();
+            voiture.Freiner();
 
+            Assert.AreEqual(voiture.Angle, 10);
         }
 
         [TestMethod]
