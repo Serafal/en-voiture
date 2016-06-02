@@ -67,7 +67,7 @@ namespace EnVoiture
         /// <summary>
         /// Emplacement de l'usager
         /// </summary>
-        public PointF Localisation
+        public PointF Position
         {
             get
             {
@@ -269,7 +269,7 @@ namespace EnVoiture
 
         public void Freiner()
         {
-            Localisation = new PointF(Localisation.X, Localisation.Y);
+            Position = new PointF(Position.X, Position.Y);
             dblVitesse -= FREINAGE;
         }
         /// <summary>
