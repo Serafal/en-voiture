@@ -81,7 +81,7 @@ namespace EnVoiture
         /// <summary>
         /// propriétét automatique défini la taille en float
         /// </summary>
-        public SizeF Size
+        public SizeF Taille
         {
             get
             {
@@ -222,16 +222,23 @@ namespace EnVoiture
         /// </summary>
         public void Avancer()
         {
-            Position = new PointF((float)(Position.X + dblVitesse * Math.Sin(Angle)), (float)(Position.Y - dblVitesse * Math.Cos(Angle)));
+            Position = new PointF((float)(Position.X + dblVitesse * Math.Cos(Angle)), (float)(Position.Y + dblVitesse * Math.Sin(Angle)));
         }
+        /// <summary>
+        /// décrémente l'angle de la voiture et nous sert donc a tourner a gauche
+        /// </summary>
         public void TournerGauche()
         {
             Angle -= Vitesse / 100.0F;
         }
+        /// <summary>
+        /// incrémente l'angle de la voiture et nous sert donc a tourner a gauche
+        /// </summary>
         public void TournerDroite()
-        {//ACCELERATION = 10F;DECCELERATION = 2F;FREINAGE = 15F;
+        {
             Angle += Vitesse / 100.0F;
         }
+
         /// <summary>
         /// décrémente la vitesse 
         /// </summary>

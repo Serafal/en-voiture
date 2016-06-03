@@ -38,7 +38,7 @@ namespace EnVoiture
         {
             g.TranslateTransform(Voiture.Position.X, Voiture.Position.Y);
             g.RotateTransform((float)(Voiture.Angle * 180.0 / Math.PI));
-            g.FillRectangle(Brushes.Red, 0, 0, Voiture.Largeur, Voiture.Hauteur);
+            g.DrawImage(Properties.Resources.voiture,0,0);
             g.RotateTransform((float)(-Voiture.Angle * 180.0 / Math.PI));
             g.TranslateTransform(-Voiture.Position.X, -Voiture.Position.Y);
         }
