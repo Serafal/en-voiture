@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnVoiture
+namespace EnVoiture.Modele
 {
     public class Route : ICloneable
     {
@@ -25,6 +25,29 @@ namespace EnVoiture
         {
             get;
             set;
+        }
+
+        public int Gauche
+        {
+            get
+            {
+                return Position.X;
+            }
+            set
+            {
+                Position = new Point(value, Position.Y);
+            }
+        }
+        public int Haut
+        {
+            get
+            {
+                return Position.Y;
+            }
+            set
+            {
+                Position = new Point(Position.X, value);
+            }
         }
         
         /// <summary>
@@ -171,6 +194,22 @@ namespace EnVoiture
                             sortieN = _routesVille[n - largeurVille]._orientationsRoutes[Orientation.SUD];
                         }
 
+                        //if (sortieE)
+                        //{
+                        //    icpt++;
+                        //}
+                        //if (sortieN)
+                        //{
+                        //    icpt++;
+                        //}
+                        //if (sortieS)
+                        //{
+                        //    icpt++;
+                        //}
+                        //if (sortieW)
+                        //{
+                        //    icpt++;
+                        //}
                         if (sortieE != Obstacle.RIEN)
                         {
                             icpt++;
