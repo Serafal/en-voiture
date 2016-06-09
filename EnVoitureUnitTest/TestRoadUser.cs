@@ -25,7 +25,7 @@ namespace EnVoitureUnitTest
         {
             Usager car = new Voiture(16, 42, 120, 910, 80);
             Assert.AreEqual(new Point(16, 42), car.Position);
-            Assert.AreEqual(new Size(120, 910), car.Size);
+            Assert.AreEqual(new Size(120, 910), car.Taille);
             Assert.AreEqual(120, car.Largeur);
             Assert.AreEqual(910, car.Hauteur);
             Assert.AreEqual(16, car.Gauche);
